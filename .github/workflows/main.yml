@@ -1,10 +1,7 @@
 name: AML Mod Compiler
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -16,10 +13,10 @@ jobs:
       with:
         submodules: recursive
 
-    - name: Install Android NDK (r24)...
+    - name: Install Android NDK (r27c)...
       uses: nttld/setup-ndk@v1.2.0
       with:
-        ndk-version: r24
+        ndk-version: r27c
         local-cache: true
 
     - name: Build ARMPatch...
